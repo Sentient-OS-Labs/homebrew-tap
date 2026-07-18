@@ -6,7 +6,7 @@ cask "sentient-os" do
   #     shasum -a 256 SentientOS-1.0.dmg
   # This placeholder is intentionally NOT a valid hash so a stale/unfinished cask
   # can never install. `brew audit` will (correctly) fail until it's replaced.
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "6c40a90141cbe517bdaa77cdebc5c645279c969b0475357d76e867de6f7be55f"
 
   # release.sh tags releases with the bare version (NO "v" prefix) and names the
   # asset SentientOS-<version>.dmg — keep this URL in lockstep with that script.
