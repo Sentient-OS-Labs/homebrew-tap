@@ -1,12 +1,12 @@
 cask "sentient-os" do
-  version "1.1"
+  version "1.2"
   # ── ⚠️ FILL AT RELEASE ────────────────────────────────────────────────────────
   # The DMG doesn't exist until `Scripts/release.sh` runs and uploads it to the
   # GitHub Release. After that, compute the real checksum and paste it here:
   #     shasum -a 256 SentientOS-1.0.dmg
   # This placeholder is intentionally NOT a valid hash so a stale/unfinished cask
   # can never install. `brew audit` will (correctly) fail until it's replaced.
-  sha256 "be8fe55a58f4b97eff745d4cc42b7403d1757623e786bcdaa0125b25db7a7278"
+  sha256 "d6d582c7397f06651311a2a4dbbe8c425c1886649dc9248dd3edc79c482c9910"
 
   # release.sh tags releases with the bare version (NO "v" prefix) and names the
   # asset SentientOS-<version>.dmg — keep this URL in lockstep with that script.
