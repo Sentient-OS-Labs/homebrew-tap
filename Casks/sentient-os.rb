@@ -1,12 +1,6 @@
 cask "sentient-os" do
-  version "1.6"
-  # ── ⚠️ FILL AT RELEASE ────────────────────────────────────────────────────────
-  # The DMG doesn't exist until `Scripts/release.sh` runs and uploads it to the
-  # GitHub Release. After that, compute the real checksum and paste it here:
-  #     shasum -a 256 SentientOS-1.0.dmg
-  # This placeholder is intentionally NOT a valid hash so a stale/unfinished cask
-  # can never install. `brew audit` will (correctly) fail until it's replaced.
-  sha256 "77b04faf12c04adca3e9117596733de4f4fc542dfa17e6f0ab3fc70aa5a69419"
+  version "1.7"
+  sha256 "333627f799c29a18399e078a7e744fed6d0388d7868b37ebbba9f667f4162a1f"
 
   # release.sh tags releases with the bare version (NO "v" prefix) and names the
   # asset SentientOS-<version>.dmg — keep this URL in lockstep with that script.
@@ -25,10 +19,16 @@ cask "sentient-os" do
 
   # Sparkle owns updates in-app, so `brew upgrade` defers to it (no double-update).
   auto_updates true
-  # Hard macOS 15.0 (Sequoia) floor — enforced before any download.
+  # Require Apple silicon and macOS Sequoia or later.
+  depends_on arch: :arm64
   depends_on macos: :sequoia
 
   app "Sentient OS.app"
+
+  # Homebrew’s macOS dependency names cover major releases; enforce the minor version here.
+  preflight do
+    odie "Sentient OS 1.7 requires macOS 15.4 or later." if MacOS.full_version < "15.4"
+  end
 
   # Sentient installs a ROOT wake-helper LaunchDaemon (runs the app's own binary
   # with --wake-helper; there is NO separate helper binary) and enables a login
