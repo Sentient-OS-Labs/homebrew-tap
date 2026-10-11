@@ -1,6 +1,6 @@
 cask "sentient-os" do
-  version "1.7"
-  sha256 "333627f799c29a18399e078a7e744fed6d0388d7868b37ebbba9f667f4162a1f"
+  version "2.0"
+  sha256 "013aefd37fc384eb4cdcf83f972879dc8e22268fbbb06113f8b584498c39b7e3"
 
   # release.sh tags releases with the bare version (NO "v" prefix) and names the
   # asset SentientOS-<version>.dmg — keep this URL in lockstep with that script.
@@ -27,7 +27,7 @@ cask "sentient-os" do
 
   # Homebrew’s macOS dependency names cover major releases; enforce the minor version here.
   preflight do
-    odie "Sentient OS 1.7 requires macOS 15.4 or later." if MacOS.full_version < "15.4"
+    odie "Sentient OS #{version} requires macOS 15.4 or later." if MacOS.full_version < "15.4"
   end
 
   # Sentient installs a ROOT wake-helper LaunchDaemon (runs the app's own binary
