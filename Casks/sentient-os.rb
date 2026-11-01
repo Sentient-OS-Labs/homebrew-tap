@@ -1,6 +1,6 @@
 cask "sentient-os" do
-  version "2.7.4"
-  sha256 "de794b3dd4a5e53afc0ce6002c197dc2e3345291dc49cdeee48178216027cf17"
+  version "2.7.5"
+  sha256 "3120997707dc985c830d532f351af44e776a6d96c4c3769cb188a69da2fda936"
 
   # release.sh tags releases with the bare version (NO "v" prefix) and names the
   # asset SentientOS-<version>.dmg — keep this URL in lockstep with that script.
