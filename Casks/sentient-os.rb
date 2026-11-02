@@ -1,6 +1,6 @@
 cask "sentient-os" do
-  version "2.7.5,22"
-  sha256 "4fb0eab543c30cdcce85960d5ab86c4834f17004fafa6c0b1a09e43f1af38460"
+  version "2.7.6"
+  sha256 "9c67047a053b0ed69c7e06c9d8e30adb1604333d6f7f896df22fccbafc1da59c"
 
   # A second version component identifies a build-only release.
   url "https://github.com/Sentient-OS-Labs/sentient-os/releases/download/#{version.csv.first}#{version.csv.second ? "-build#{version.csv.second}" : ""}/SentientOS-#{version.csv.first}.dmg",
