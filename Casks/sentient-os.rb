@@ -1,10 +1,9 @@
 cask "sentient-os" do
-  version "2.7.5"
-  sha256 "3120997707dc985c830d532f351af44e776a6d96c4c3769cb188a69da2fda936"
+  version "2.7.5,22"
+  sha256 "4fb0eab543c30cdcce85960d5ab86c4834f17004fafa6c0b1a09e43f1af38460"
 
-  # release.sh tags releases with the bare version (NO "v" prefix) and names the
-  # asset SentientOS-<version>.dmg — keep this URL in lockstep with that script.
-  url "https://github.com/Sentient-OS-Labs/sentient-os/releases/download/#{version}/SentientOS-#{version}.dmg?revision=841f8ec7",
+  # A second version component identifies a build-only release.
+  url "https://github.com/Sentient-OS-Labs/sentient-os/releases/download/#{version.csv.first}#{version.csv.second ? "-build#{version.csv.second}" : ""}/SentientOS-#{version.csv.first}.dmg",
       verified: "github.com/Sentient-OS-Labs/sentient-os/"
   name "Sentient OS"
   desc "On-device AI that reads your life and proactively acts on it"
